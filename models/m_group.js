@@ -1,11 +1,11 @@
 //==============================================
 //              GROUP MODEL
 //==============================================
-var mongoose = require("../lib/helper/h_db");
-console.log(mongoose);
+var mongoose = require("../lib/helper/h_db").mongoose;
 /*
        Group Schema
  */
+
 var groupSchema = new mongoose.Schema({
     name: String,
     members: [

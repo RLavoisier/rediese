@@ -1,5 +1,5 @@
 //==============================================
-//              DASHBORD ROUTE
+//              DASHBORD ROUTES
 //==============================================
 var express                 = require("express");
 var dashboard_router        = express.Router();

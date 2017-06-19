@@ -25,11 +25,39 @@ h_db.connect();
 //==============================================
 //                  ROUTES
 //==============================================
-var r_dashboard         = require("./routes/r_dashboard"),
+
+var r_base              = require("./routes/r_base"),
+    r_dashboard         = require("./routes/r_dashboard"),
     r_group             = require("./routes/r_group");
 
+app.use(r_base);
 app.use(r_dashboard);
 app.use(r_group);
+
+//==============================================
+//              DEBUG UTILITIES
+//==============================================
+if(h_app.debug){
+    /*
+     Database artificial seeding
+     */
+     function seed() {
+         var Group = require("./models/m_group");
+         Group.create({
+             name: "Croozers",
+             members: [
+                 {
+                     id: "8970lhhhkjhhi9!çèHkhç987lkjlkjh",
+                     name: "Renaud",
+                     admin: true
+                 }
+             ]
+         }, function (err, user) {
+         });
+     };
+
+     seed();
+}
 
 //==============================================
 //              STARTING SERVER
