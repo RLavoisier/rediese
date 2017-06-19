@@ -1,8 +1,8 @@
 //==============================================
 //              GROUP MODEL
 //==============================================
-var mongoose = require("mongoose");
-
+var mongoose = require("../lib/helper/h_db");
+console.log(mongoose);
 /*
        Group Schema
  */
